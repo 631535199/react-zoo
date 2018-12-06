@@ -1,14 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { inject } from 'mobx-react';
 
-
-
+@inject( 'aboutStore' )
 class About extends React.Component {
     render() {
         return (
             <div>
-                <p>这是about页面</p>
-                <Link to="/">go to Home</Link>
+                <p>{ this.props.aboutStore.title }</p>
+                <Link to="/">goto Home</Link>
             </div>
         )
     }
