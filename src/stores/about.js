@@ -1,5 +1,5 @@
 import { observable,action } from 'mobx';
-import HomeApi from 'api/home';
+import AboutApi from 'api/about';
 // class AboutStore {
 //     @observable title = 'this is cbps about page';
 // }
@@ -8,9 +8,8 @@ const AboutStore = observable( {
     list: [],
 
     // 获取首页数据
-    async aboutList() {
-        console.log('test')
-        this.list = await HomeApi.aboutList();
+    aboutList() {
+        this.list = AboutApi.aboutList();
     }
 } );
 

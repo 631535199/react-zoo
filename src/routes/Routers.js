@@ -1,10 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./Routers.less";
-
 import { Provider } from 'mobx-react';
 import stores from 'stores/index';
-
 import Home from "../pages/home";
 import About from "../pages/about";
 

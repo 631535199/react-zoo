@@ -44,10 +44,14 @@ class About extends React.Component {
     }
 
     componentDidMount() {
-        this.props.aboutStore.aboutList();
+        let store = this.props.aboutStore
+        store.aboutList();
+        store.list.then(function (result) {
+            console.log(result.default);
+        })
     }
     render() {
-        console.log(this.props.aboutStore.list)
+       
         const uploadButton = (
             <div>
                 <Icon type={this.state.loading ? 'loading' : 'plus'} />
@@ -60,7 +64,7 @@ class About extends React.Component {
                 <p>{this.props.aboutStore.title}</p>
                 <Link to="/">goto Home</Link>
                 <ul>
-
+                   
                 </ul>
 
                 <Upload

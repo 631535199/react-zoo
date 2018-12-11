@@ -1,28 +1,20 @@
 {
-    "code": "200",
-    "message": "successful",
-    "success": true,
-    "requestId": "mock",
-    "data": {
-      "title": "Animal list",
-      "overview": "",
-      "formlist": {
-        "table": {
-          "config": [
-            {
-              "key": "ID",
-              "value": "172"
-            },
-            {
-              "key": "name",
-              "value": "Ted"
-            },
-            {
-              "key": "interest",
-              "value": "basketball"
-            }
-          ]
-        }
-      }
+  "code": "200",
+  "message": "successful",
+  "success": true,
+  "requestId": "mock",
+  "data": [
+    {
+      "key": "ID",
+      "value": "172"
+    },
+    {
+      "key": "name",
+      "value": "Ted"
+    },
+    {
+      "key": "interest",
+      "value": "basketball"
     }
-  }
+  ]
+}

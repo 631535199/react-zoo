@@ -11,6 +11,7 @@ class Home extends React.Component {
     }
 
     render() {
+        
         return (
             <div>
                 <p>{this.props.homeStore.title}</p>
