@@ -11,12 +11,10 @@ class Home extends React.Component {
     }
 
     render() {
-        
         return (
             <div>
                 <p>{this.props.homeStore.title}</p>
                 <Link to="/about">go to About</Link>
-
                 <div style={{ textAlign: 'left', width: '450px', margin: 'auto' }}>
                     <p>下面是列表数据：</p>
                     {

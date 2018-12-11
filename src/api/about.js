@@ -5,9 +5,13 @@ export default {
    * 获取首页列表页数据
    * @returns {Promise.<*>}
    */
-  aboutList() {
-    console.log("is ok")
-    return import(`./mocks/aboutlist.json`);
+  async aboutList() {
+    //console.log("is ok")
+    return await import(`./mocks/aboutlist.json`);
+  },
+  async cityList() {
+    //console.log("is ok")
+    return await import(`./mocks/citylist.json`);
   }
   // async aboutList() {
   //   return await axios

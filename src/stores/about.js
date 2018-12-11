@@ -1,16 +1,25 @@
-import { observable,action } from 'mobx';
+import { observable, action } from 'mobx';
 import AboutApi from 'api/about';
 // class AboutStore {
 //     @observable title = 'this is cbps about page';
 // }
-const AboutStore = observable( {
+const AboutStore = observable({
     title: 'this is about page',
-    list: [],
-
+    ablist: [],
+    cylist: [],
     // 获取首页数据
-    aboutList() {
-        this.list = AboutApi.aboutList();
+    async aboutList() {
+        await AboutApi.aboutList().then((rs) => {
+            console.log(rs.default.data)
+            this.ablist = rs.default.data
+        });
+    },
+    async cityList() {
+        await AboutApi.cityList().then((rs) => {
+            console.log(rs.default.data)
+            this.cylist = rs.default.data
+        });
     }
-} );
+});
 
 export default AboutStore;

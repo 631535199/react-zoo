@@ -44,14 +44,13 @@ class About extends React.Component {
     }
 
     componentDidMount() {
-        let store = this.props.aboutStore
-        store.aboutList();
-        store.list.then(function (result) {
-            console.log(result.default);
-        })
+        let stores = this.props.aboutStore
+        stores.aboutList();
+        stores.cityList();
+        //console.log(stores.ablist)
     }
     render() {
-       
+
         const uploadButton = (
             <div>
                 <Icon type={this.state.loading ? 'loading' : 'plus'} />
@@ -59,13 +58,23 @@ class About extends React.Component {
             </div>
         );
         const imageUrl = this.state.imageUrl;
+        let stores = this.props.aboutStore
         return (
             <div>
                 <p>{this.props.aboutStore.title}</p>
                 <Link to="/">goto Home</Link>
                 <ul>
-                   
+                    {!!stores.ablist && stores.ablist.map((rs) => {
+                        return (<li key={rs.key}>{`${rs.key} : ${rs.value}`}</li>)
+                    })}
                 </ul>
+                <br />
+                <p>love city:</p>
+                <ol>
+                    {!!stores.cylist && stores.cylist.map((rs) => {
+                        return (<li key={rs.id}>{rs.name}</li>)
+                    })}
+                </ol>
 
                 <Upload
                     name="avatar"

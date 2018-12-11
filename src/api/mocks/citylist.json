@@ -1,0 +1,21 @@
+{
+    "code": "200",
+    "message": "successful",
+    "success": true,
+    "requestId": "mock",
+    "data": [
+      {
+        "id": "bj",
+        "name": "beijing"
+      },
+      {
+        "id": "cd",
+        "name": "chengdu"
+      },
+      {
+        "id": "cq",
+        "name": "chongqing"
+      }
+    ]
+  }
+  
