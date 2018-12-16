@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.less";
 import * as serviceWorker from "./serviceWorker";
-import Routes from './routes/Routers';
+import Contents from './routes/index';
 
 
-ReactDOM.render((<Routes/>
+ReactDOM.render((<Contents/>
 ), document.body)
 
 // If you want your app to work offline and load faster, you can change
