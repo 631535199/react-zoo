@@ -11,6 +11,7 @@ import { Provider } from "mobx-react";
 import Layouts from "../components/layout";
 
 
+
 const Contents = () => (
   <div className="app">
     <Provider {...stores}>

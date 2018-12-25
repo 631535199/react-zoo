@@ -12,6 +12,7 @@ import {
   Button,
   AutoComplete
 } from "antd";
+import { observer, inject} from 'mobx-react';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -52,6 +53,8 @@ const residences = [
   }
 ];
 
+@inject("listStore")
+@observer
 class List extends Component {
   constructor(props) {
     super(props);

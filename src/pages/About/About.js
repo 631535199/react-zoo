@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { observer, inject } from "mobx-react";
+import { observer, inject} from "mobx-react";
 import { Upload, Icon, message } from "antd";
+
 
 function getBase64(img, callback) {
   const reader = new FileReader();
@@ -21,13 +22,15 @@ function beforeUpload(file) {
   return isJPG && isLt2M;
 }
 
+
+
 @inject("aboutStore")
 @observer
 class About extends React.Component {
   state = {
     loading: false
   };
-
+  
   handleChange = info => {
     if (info.file.status === "uploading") {
       this.setState({ loading: true });
@@ -48,7 +51,9 @@ class About extends React.Component {
     let stores = this.props.aboutStore;
     stores.aboutList();
     stores.cityList();
-    //console.log(stores.ablist)
+    
+    
+    
   }
   render() {
     const uploadButton = (

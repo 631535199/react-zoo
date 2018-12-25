@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx';
+import { observable, action ,autorun } from 'mobx';
 import AboutApi from 'api/about';
 // class AboutStore {
 //     @observable title = 'this is cbps about page';
@@ -21,5 +21,7 @@ const AboutStore = observable({
         });
     }
 });
-
+AboutStore.title = "C.S.";
+//console.log(AboutStore.title,"kiyy")
+//autorun(() => console.log(AboutStore.title,"kiy"));
 export default AboutStore;

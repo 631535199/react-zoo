@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { observer, inject } from "mobx-react";
+import { Button } from "antd";
 
 @inject("homeStore")
 @observer
@@ -11,12 +12,27 @@ class Home extends React.Component {
       content: {
         id: "",
         name: ""
-      }
+      },
+      collapsed: true
     };
   }
   componentDidMount() {
     this.props.homeStore.getList();
+
+    let first = { name: "Bob" };
+    let last = { lastName: "Smith","id":"112" };
+
+    let person = Object.assign(first, last);
+    console.log(person);
+    
+    
   }
+
+  onCollapse = e => {
+    this.setState(state => ({ collapsed: !state.collapsed }));
+    console.log(this.state);
+  };
+
   render() {
     return (
       <div>
@@ -28,6 +44,9 @@ class Home extends React.Component {
             this.props.homeStore.list.map(el => {
               return <div key={el.id}>标题：{el.title}</div>;
             })}
+        </div>
+        <div className="aa">
+          <Button onClick={this.onCollapse}>setState</Button>
         </div>
       </div>
     );
