@@ -14,7 +14,7 @@ const HomeStore = observable({
     return this.price * this.amount;
   },
   set total(total) {
-    this.price = total / this.amount; // 从 total 中推导出 price
+    this.price = total / this.amount; // 从total 中推导出 price
   }
 });
 
